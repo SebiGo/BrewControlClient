@@ -1,0 +1,53 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="list-group text-center">
+
+			<div class="list-group-item list-group-item-home">
+				<h1>Common</h1>
+				<form>
+					<label class="config" for="server">Server:</label>
+					<input class="config" id="server" ng-model="host.url" type="text" ng-if="!mashing.activeRest" />
+					<input class="config" id="server" ng-model="host.url" type="text" disabled ng-if="mashing.activeRest" /><br />
+					<label class="config" for="nameMashing">Name:</label>
+					<input class="config" id="nameMashing" ng-model="mashing.name" type="text" ng-if="!mashing.activeRest" />
+					<input class="config" id="nameMashing" ng-model="mashing.name" type="text" disabled ng-if="mashing.activeRest" /><br />
+					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
+				</form>
+			</div>
+
+			<div class="list-group-item list-group-item-home" ng-if="!mashing.activeRest">
+				<h1>Rests</h1>
+				<form>
+					<div class="restConfig" ng-repeat="rest in rests | orderBy:rest.priority">
+						<input class="restConfig" id="{{rest.uuid}}_name" ng-model="rest.name" type="text" />
+						<input class="restConfig mini" id="{{rest.uuid}}_temperature" ng-model="rest.temperature" type="text" />°C
+						<input class="restConfig mini" id="{{rest.uuid}}_duration" ng-model="rest.duration" type="text" />min
+						<label class="restConfig" for="{{rest.uuid}}_continueAutomatically" id="navigation-label"> 
+							<i class="fa {{rest.continueAutomatically?'fa-play':'fa-pause'}}"></i>
+						</label>
+						<input class="hidden" id="{{rest.uuid}}_continueAutomatically" ng-model="rest.continueAutomatically" type="checkbox" />
+						<a class="restConfig" ng-click="deleteRest(rest.uuid)"><i class="fa fa-trash"></i></a>
+					</div>
+					<button ng-click="updateRests()" class="submit fa fa-save text-primary"></button>
+				</form>
+				<form>
+					<div class="restConfig">
+						<input class="restConfig" id="name" ng-model="newRest.name" type="text" />
+						<input class="restConfig mini" id="temperature" ng-model="newRest.temperature" type="text" />°C 
+						<input class="restConfig mini" id="duration" ng-model="newRest.duration" type="text" />min 
+						<label class="restConfig" for="continueAutomatically" id="navigation-label">
+							<i class="fa {{newRest.continueAutomatically?'fa-play':'fa-pause'}}"></i>
+						</label>
+						<input class="hidden" id="continueAutomatically" ng-model="newRest.continueAutomatically" type="checkbox" />
+					</div>
+					<button ng-click="saveNewRest()" class="submit fa fa-plus-square text-primary"></button>
+				</form>
+			</div>
+			<div class="list-group-item list-group-item-home" ng-if="mashing.activeRest">
+				<h1>Parameters omitted</h1>
+				Some parameters omitted, as they can not be changed while mashing.
+			</div>
+		</div>
+	</div>
+</div>
+
