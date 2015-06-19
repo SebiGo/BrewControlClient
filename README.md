@@ -6,7 +6,7 @@ TBD
 
 # Installation
 ## Compile project
-This project is based on the AngularUI seed template. You need to have npm and bower installed. 
+This project is based on the [AngularJS seed template][angular-seed]. You need to have npm and bower installed. 
 To clone and install the project:
 ```
 git clone git@github.com:SebastianGoodrick/BrewControlClient.git
@@ -34,3 +34,4 @@ Please note, you have to set your phone to developer mode.
 Please use [GitHub Issues][issues] for bugs and feature requests.
 
 [issues]: https://github.com/SebastianGoodrick/BrewControlClient/issues
+[angular-seed]: https://github.com/angular/angular-seed
