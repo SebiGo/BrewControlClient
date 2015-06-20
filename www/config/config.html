@@ -2,18 +2,36 @@
 	<div class="scrollable-content">
 		<div class="list-group text-center">
 
-			<div class="list-group-item list-group-item-home">
-				<h1>Common</h1>
 				<form>
+				<div class="list-group-item list-group-item-home">
+					<h1>Connection</h1>
 					<label class="config" for="server">Server:</label>
 					<input class="config" id="server" ng-model="host.url" type="text" ng-if="!mashing.activeRest" />
-					<input class="config" id="server" ng-model="host.url" type="text" disabled ng-if="mashing.activeRest" /><br />
+					<input class="config" id="server" ng-model="host.url" type="text" disabled ng-if="mashing.activeRest" />
+					<br />
+					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
+				</div>
+				<div class="list-group-item list-group-item-home">
+					<h1>Sensor calibration</h1>
+					<label class="config" for="nameMashing">Altitude:</label>
+					<input class="config" id="nameMashing" ng-model="mashing.altitude" type="text"/>
+					<br />
+					<label class="config" for="nameMashing">Reading / boiling:</label>
+					<input class="config" id="nameMashing" ng-model="mashing.measuredTemperatureBoilingWater" type="text"/>
+					<br />
+					<label class="config" for="nameMashing">Reading / ice:</label>
+					<input class="config" id="nameMashing" ng-model="mashing.measuredTemperatureIceWater" type="text"/>
+					<br />
+					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
+				</div>
+				<div class="list-group-item list-group-item-home">
+					<h1>Mash name</h1>
 					<label class="config" for="nameMashing">Name:</label>
 					<input class="config" id="nameMashing" ng-model="mashing.name" type="text" ng-if="!mashing.activeRest" />
 					<input class="config" id="nameMashing" ng-model="mashing.name" type="text" disabled ng-if="mashing.activeRest" /><br />
 					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
-				</form>
-			</div>
+				</div>
+			</form>
 
 			<div class="list-group-item list-group-item-home" ng-if="!mashing.activeRest">
 				<h1>Rests</h1>
