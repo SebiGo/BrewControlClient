@@ -1,45 +1,44 @@
-# BrewControlClient
-This is the BrewControl client. It is a single page application based on AngularUI. 
+# About BrewControlClient
 
-# What does this software do?
 This software brews beer. Well, it is the client for the [BrewControlServer][BrewControlServer] that controls the mashing process.
-In this repository, you will find the client, that consumes all necessary rest services to control the mashing process.
+This is a single page web application based on AngularJS. In this repository, you will find the client that consumes all necessary rest services to control the mashing process.
 
 # Installation
+
+**Note**: You need to have a [BrewControlServer][BrewControlServer] up and running.
 
 ## 0. The simple solution
 You don't need to install the client, you can just start it here (if you have web access):
 [http://sebastiangoodrick.github.io/BrewControlClient/www/][brewcontrol]
+
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 
-**Please note**: You need to have a [BrewControlServer][BrewControlServer] up and running.
-
-## 1. Compile project
+## 1. Compile the project
 This project is based on the [AngularJS seed template][angular-seed]. You need to have npm and bower installed. 
-To clone and install the project:
+Clone and install the project:
 ```
 git clone git@github.com:SebastianGoodrick/BrewControlClient.git
 cd BrewControlClient
 npm install
 ```
-If you want to run this on a web server, copy the folder www to your web server. You can also start serving the page with 
+If you want to run this on a web server, copy the folder www to your web server. You can also start serving the page using: 
 ```
 npm start
 ```
 
 ## 2. Cordova (optional)
-If you want to run this on your mobile phone with Apache Cordova you need to install cordova first: 
+If you want to run this on your mobile phone with Apache Cordova you need to install cordova first.
 ```
 sudo npm install -g cordova
 ```
 
-Plug in your phone and for android do a 
+Plug in your phone and, if you have an android device, execute: 
 ```
 cordova platform add android
 cordova run android
 ```
 
-Please note, you have to set your phone to developer mode.
+Note: You have to set your phone to developer mode.
 
 # Contact, Support, Bugs, Feature requests
 Please use [GitHub Issues][issues] for bugs and feature requests.
