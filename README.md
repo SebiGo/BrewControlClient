@@ -9,7 +9,7 @@ In this repository, you will find the client, that consumes all necessary rest s
 
 ## 0. The simple solution
 You don't need to install the client, you can just start it here (if you have web access):
-[http://goodrick.ch/brewcontrol/][brewcontrol]
+[http://sebastiangoodrick.github.io/BrewControlClient/www/][brewcontrol]
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 **Please note**: You need to have a [BrewControlServer][BrewControlServer] up and running.
 
@@ -45,5 +45,5 @@ Please use [GitHub Issues][issues] for bugs and feature requests.
 
 [issues]: https://github.com/SebastianGoodrick/BrewControlClient/issues
 [angular-seed]: https://github.com/angular/angular-seed
-[brewcontrol]: http://goodrick.ch/brewcontrol/
+[brewcontrol]: http://sebastiangoodrick.github.io/BrewControlClient/www/
 [BrewControlServer]: https://github.com/SebastianGoodrick/BrewControlServer
