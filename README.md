@@ -47,3 +47,6 @@ Please use [GitHub Issues][issues] for bugs and feature requests.
 [angular-seed]: https://github.com/angular/angular-seed
 [brewcontrol]: http://sebastiangoodrick.github.io/BrewControlClient/www/
 [BrewControlServer]: https://github.com/SebastianGoodrick/BrewControlServer
+
+# Continuous integration and code coverage 
+CodeClimate: [![Code Climate](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/badges/gpa.svg)](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient) [![Test Coverage](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/badges/coverage.svg)](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/coverage)
