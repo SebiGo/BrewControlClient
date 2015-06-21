@@ -10,6 +10,7 @@ This is a single page web application based on AngularJS. In this repository, yo
 ## 0. The simple solution
 You don't need to install the client, you can just start it here (if you have web access):
 [http://sebastiangoodrick.github.io/BrewControlClient/www/][brewcontrol]
+
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 
 ## 1. Compile the project
