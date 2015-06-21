@@ -61,7 +61,7 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 									$scope.mashing = data["brewcontrol.mashing"];
 								}, 1200);
 							});
-						})							
+						});							
 						
 					};
 					// bind mashing start function to $scope
@@ -83,6 +83,6 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 							});
 							tick(millis);
 						}, millis);
-					};
+					}
 					tick(1000);
 				} ]);

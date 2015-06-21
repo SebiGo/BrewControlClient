@@ -9,13 +9,13 @@ angular.module('BrewControl.config', ['ngRoute'])
 .service('sharedProperties', function () {
 	return {
     	getHost: function () {
-    		if (window.localStorage.getItem("BrewControl.server") == null) {
+    		if (localStorage.getItem("BrewControl.server") === null) {
     			return "http://raspberrypi:8080/";
     		}
-    		return window.localStorage.getItem("BrewControl.server");
+    		return localStorage.getItem("BrewControl.server");
     	},
     	setHost: function(value) {
-    		window.localStorage.setItem("BrewControl.server", value);    	
+    		localStorage.setItem("BrewControl.server", value);    	
     	}
     };
 })
@@ -71,7 +71,7 @@ angular.module('BrewControl.config', ['ngRoute'])
 	$scope.saveMashing = function () {
 		if ($scope.host.url != sharedProperties.getHost()) {
 			sharedProperties.setHost($scope.host.url);
-			window.location.reload();
+			document.location.reload();
 		}
 		MashingService.save({
 			name : $scope.mashing.name
