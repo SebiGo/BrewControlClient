@@ -5,12 +5,12 @@ This is a single page web application based on AngularJS. In this repository, yo
 
 # Installation
 
+**Note**: You need to have a [BrewControlServer][BrewControlServer] up and running.
+
 ## 0. The simple solution
 You don't need to install the client, you can just start it here (if you have web access):
 [http://sebastiangoodrick.github.io/BrewControlClient/www/][brewcontrol]
 This works for any device that has a browser. Make sure you supply a correct server connection string.
-
-**Note**: You need to have a [BrewControlServer][BrewControlServer] up and running.
 
 ## 1. Compile the project
 This project is based on the [AngularJS seed template][angular-seed]. You need to have npm and bower installed. 
