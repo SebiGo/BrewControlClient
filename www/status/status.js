@@ -84,5 +84,5 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 							tick(millis);
 						}, millis)
 					}
-					tick(5000);
+					tick(1000);
 				} ]);

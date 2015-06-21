@@ -5,11 +5,11 @@
 				<h1>{{mashing.name}}</h1>
 			</div>
 
-			<div class="list-group-item list-group-item-home media" ng-if="mashing.activeRest">
+			<div class="list-group-item list-group-item-home media">
 				<div class="media-body">
 					<h2 class="media-heading">{{mashing.temperature | number:1}}°C</h2>
 				</div>
-				<div class="media-body" ng-repeat="rest in rests | orderBy:rest.priority">
+				<div class="media-body" ng-repeat="rest in rests | orderBy:rest.priority"  ng-if="mashing.activeRest">
 					<div ng-if="mashing.activeRest == rest.uuid">
 						<i ng-if="rest.status == 'INACTIVE'" class="fa fa-clock-o"></i>
 						<i ng-if="rest.status == 'HEATING'" class="fa fa-fire  {{rest.status}}"></i>
@@ -26,14 +26,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="list-group-item list-group-item-home media" ng-if="mashing.activeRest">
+			<div class="list-group-item list-group-item-home media" ng-if="!mashing.activeRest">
+				<button ng-click="mashingStart()"  class="submit fa fa-play-circle-o text-primary"></button>
+			</div>
+			<div class="list-group-item list-group-item-home media">
 				<div class="media-body">
 					<img ng-src="{{mashingGraph}}">
 				</div>
-			</div>
-
-			<div class="list-group-item list-group-item-home media" ng-if="!mashing.activeRest">
-				<button ng-click="mashingStart()"  class="submit fa fa-play-circle-o text-primary"></button>
 			</div>
 
 			<div class="list-group-item list-group-item-home media" ng-repeat="rest in rests | orderBy:rest.priority">
