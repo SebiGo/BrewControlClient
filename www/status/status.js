@@ -25,7 +25,7 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 								"brewcontrol.rest" : $scope.rests[i]
 							});
 						}
-					}
+					};
 
 					// add a new rest and update $scope.rests[] from server
 					$scope.newRest = {};
@@ -37,7 +37,7 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 								$scope.rests = data["brewcontrol.rest"];
 							});
 						});
-					}
+					};
 
 					// delete a rest and update $scope.rests[] from server
 					$scope.deleteRest = function(uuid) {
@@ -46,7 +46,7 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 								$scope.rests = data["brewcontrol.rest"];
 							});
 						});
-					}
+					};
 
 					// bind mashing to $scope.mashing
 					Mashing.get(function(data) {
@@ -63,11 +63,11 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 							});
 						})							
 						
-					}
+					};
 					// bind mashing start function to $scope
 					$scope.mashingContinue = function() {
 						Mashing.continue();
-					}
+					};
 					// bind graph function to $scope
 					$scope.mashingGraph = sharedProperties.getHost() + 'mashing/graph';
 					
@@ -82,7 +82,7 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 								$scope.rests = data["brewcontrol.rest"];
 							});
 							tick(millis);
-						}, millis)
-					}
+						}, millis);
+					};
 					tick(1000);
 				} ]);

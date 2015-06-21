@@ -9,13 +9,13 @@ angular.module('BrewControl.config', ['ngRoute'])
 .service('sharedProperties', function () {
 	return {
     	getHost: function () {
-    		if (localStorage.getItem("BrewControl.server") == null) {
+    		if (window.localStorage.getItem("BrewControl.server") == null) {
     			return "http://raspberrypi:8080/";
     		}
-    		return localStorage.getItem("BrewControl.server");
+    		return window.localStorage.getItem("BrewControl.server");
     	},
     	setHost: function(value) {
-    		localStorage.setItem("BrewControl.server", value);    	
+    		window.localStorage.setItem("BrewControl.server", value);    	
     	}
     };
 })
@@ -40,7 +40,7 @@ angular.module('BrewControl.config', ['ngRoute'])
 				"brewcontrol.rest" : $scope.rests[i]
 			});
 		}
-	}
+	};
 
 	// add a new rest and update $scope.rests[] from server
 	$scope.newRest = {};
@@ -52,7 +52,7 @@ angular.module('BrewControl.config', ['ngRoute'])
 				$scope.rests = data["brewcontrol.rest"];
 			});
 		});
-	}
+	};
 
 	// delete a rest and update $scope.rests[] from server
 	$scope.deleteRest = function(uuid) {
@@ -61,7 +61,7 @@ angular.module('BrewControl.config', ['ngRoute'])
 				$scope.rests = data["brewcontrol.rest"];
 			});
 		});
-	}
+	};
 
 	// bind mashing to $scope.mashing
 	MashingService.get(function(data) {
@@ -71,13 +71,12 @@ angular.module('BrewControl.config', ['ngRoute'])
 	$scope.saveMashing = function () {
 		if ($scope.host.url != sharedProperties.getHost()) {
 			sharedProperties.setHost($scope.host.url);
-			location.reload();
+			window.location.reload();
 		}
 		MashingService.save({
 			name : $scope.mashing.name
 		}, {
 			"brewcontrol.mashing" : $scope.mashing
-		})
-		console.log(MashingService);
-	}
+		});
+	};
 } ]);

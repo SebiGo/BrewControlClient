@@ -12,4 +12,4 @@ angular.module('BrewControl', [
 
 config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.otherwise({redirectTo: '/config'});
-}])
+}]);
