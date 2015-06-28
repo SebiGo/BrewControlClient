@@ -8,8 +8,13 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 
 .controller(
 		'StatusCtrl',
-		[ '$scope', '$timeout', 'RestService', 'MashingService', 'sharedProperties',
-				function($scope, $timeout, RestService, Mashing, sharedProperties) {
+		[ '$scope', '$timeout', 'RestService', 'MashingService', 'InfoService', 'sharedProperties',
+				function($scope, $timeout, RestService, Mashing, InfoService, sharedProperties) {
+
+					// bind info to $scope.info
+					InfoService.get(function(data) {
+						$scope.info = data["brewcontrol.info"];
+					});
 
 					// bind all rests to $scope.rests[]
 					RestService.get(function(data) {
@@ -70,19 +75,26 @@ angular.module('BrewControl.status', [ 'ngRoute', 'ngResource', 'Service' ])
 					};
 					// bind graph function to $scope
 					$scope.mashingGraph = sharedProperties.getHost() + 'mashing/graph';
-					
+
 					// poll for status (rest & mashing services)
 					function tick(millis) {
-						$timeout(function() {
-							$scope.mashingGraph = sharedProperties.getHost() + 'mashing/graph?'+new Date().getTime();
-							Mashing.get(function(data) {
-								$scope.mashing = data["brewcontrol.mashing"];
-							});
-							RestService.get(function(data) {
-								$scope.rests = data["brewcontrol.rest"];
-							});
-							tick(millis);
-						}, millis);
+						if ($scope.info === undefined) {
+							$timeout(function() {
+								// do nothing
+								tick(millis);
+							}, millis);
+						} else {
+							$timeout(function() {
+								$scope.mashingGraph = sharedProperties.getHost() + 'mashing/graph?'+new Date().getTime();
+								Mashing.get(function(data) {
+									$scope.mashing = data["brewcontrol.mashing"];
+								});
+								RestService.get(function(data) {
+									$scope.rests = data["brewcontrol.rest"];
+								});
+								tick(millis);
+							}, millis);
+						}
 					}
 					tick(1000);
-				} ]);
+		} ]);

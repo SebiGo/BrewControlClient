@@ -1,6 +1,12 @@
 <div class="scrollable">
 	<div class="scrollable-content">
-		<div class="list-group text-center">
+		<div class="list-group text-center" ng-if="!info.version">
+			<div class="list-group-item list-group-item-home">
+				<h1>No connection</h1>
+				Please set connection string in Config first.
+			</div>
+		</div>
+		<div class="list-group text-center" ng-if="info.version">
 			<div class="list-group-item list-group-item-home">
 				<h1>{{mashing.name}}</h1>
 			</div>

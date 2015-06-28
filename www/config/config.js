@@ -20,8 +20,8 @@ angular.module('BrewControl.config', ['ngRoute'])
     };
 })
 
-.controller('ConfigCtrl', 		[ '$scope', 'RestService', 'MashingService', 'sharedProperties',
-                  				function($scope, RestService, MashingService, sharedProperties) {
+.controller('ConfigCtrl', 		[ '$scope', 'RestService', 'MashingService', 'InfoService', 'sharedProperties',
+                  				function($scope, RestService, MashingService, InfoService, sharedProperties) {
 
 	// connection
 	$scope.host = {url: sharedProperties.getHost()};
@@ -79,4 +79,10 @@ angular.module('BrewControl.config', ['ngRoute'])
 			"brewcontrol.mashing" : $scope.mashing
 		});
 	};
+
+	// bind info to $scope.info
+	InfoService.get(function(data) {
+		$scope.info = data["brewcontrol.info"];
+	});
+
 } ]);
