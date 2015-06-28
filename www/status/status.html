@@ -13,7 +13,7 @@
 
 			<div class="list-group-item list-group-item-home media">
 				<div class="media-body">
-					<h2 class="media-heading">{{mashing.temperature | number:1}}°C</h2>
+					<h2 class="media-heading">{{mashing.temperature | number:1}}°C</h2><br/>
 				</div>
 				<div class="media-body" ng-repeat="rest in rests | orderBy:rest.priority"  ng-if="mashing.activeRest">
 					<div ng-if="mashing.activeRest == rest.uuid">
@@ -27,6 +27,8 @@
 						<span ng-if="rest.heating > 0"><i class="fa fa-fire"></i> {{rest.heating | date:'H:mm:ss'}}</span>
 						<span ng-if="rest.active > 0"> - <i class="fa fa-spinner"></i> {{rest.active | date:'H:mm:ss'}}</span> 
 						<span ng-if="rest.completed > 0"> - <i class="fa fa-check-circle"></i> {{rest.completed | date:'H:mm:ss'}}</span>
+						<br/>
+						Hysteresis: {{mashing.hysteresis | number:1}}°C
 						<br/>
 						<button ng-if="rest.status == 'WAITING_COMPLETE'" ng-click="mashingContinue()" class="submit fa fa-play-circle-o text-primary"></button>
 					</div>
