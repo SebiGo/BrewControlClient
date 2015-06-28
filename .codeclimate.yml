@@ -1,0 +1,10 @@
+# Save as .codeclimate.yml (note leading .) in project root directory
+languages:
+  Ruby: false
+  JavaScript: true
+  Python: false
+  PHP: false
+exclude_paths:
+ - "e2e-tests/*"
+ - "karma.conf.js"
+ - "plugins/*"

@@ -6,11 +6,13 @@
 				<div class="list-group-item list-group-item-home">
 					<h1>Connection</h1>
 					<label class="config" for="server">Server:</label>
-					<input class="config" id="server" ng-model="host.url" type="text"/>
+					<input class="config" id="server" ng-model="host.url" type="text"/><br/>
+					<span ng-if="info.version">Server version: {{info.version}}</span>
+					<span ng-if="!info.version">No connection!</span>
 					<br />
 					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
 				</div>
-				<div class="list-group-item list-group-item-home">
+				<div class="list-group-item list-group-item-home" ng-if="info.version">
 					<h1>Sensor calibration</h1>
 					<label class="config" for="nameMashing">Altitude:</label>
 					<input class="config" id="nameMashing" ng-model="mashing.altitude" type="text"/>
@@ -23,7 +25,7 @@
 					<br />
 					<button ng-click="saveMashing()" class="submit fa fa-save text-primary"></button>
 				</div>
-				<div class="list-group-item list-group-item-home">
+				<div class="list-group-item list-group-item-home" ng-if="info.version">
 					<h1>Mash name</h1>
 					<label class="config" for="nameMashing">Name:</label>
 					<input class="config" id="nameMashing" ng-model="mashing.name" type="text" ng-if="!mashing.activeRest" />
@@ -32,7 +34,7 @@
 				</div>
 			</form>
 
-			<div class="list-group-item list-group-item-home" ng-if="!mashing.activeRest">
+			<div class="list-group-item list-group-item-home" ng-if="!mashing.activeRest && info.version">
 				<h1>Rests</h1>
 				<form>
 					<div class="restConfig" ng-repeat="rest in rests | orderBy:rest.priority">
@@ -60,7 +62,7 @@
 					<button ng-click="saveNewRest()" class="submit fa fa-plus-square text-primary"></button>
 				</form>
 			</div>
-			<div class="list-group-item list-group-item-home" ng-if="mashing.activeRest">
+			<div class="list-group-item list-group-item-home" ng-if="mashing.activeRest && info.version">
 				<h1>Parameters omitted</h1>
 				Some parameters omitted, as they can not be changed while mashing.
 			</div>

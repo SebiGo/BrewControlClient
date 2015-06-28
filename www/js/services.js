@@ -4,10 +4,15 @@ angular
 
 .module('Service', [ 'ngResource' ])
 
+.factory('InfoService', [ '$resource', 'sharedProperties', function($resource, sharedProperties) {
+	return $resource(sharedProperties.getHost() + 'info', {
+	});
+} ])
+
 .factory('RestService', [ '$resource', 'sharedProperties', function($resource, sharedProperties) {
 	return $resource(sharedProperties.getHost() + 'rest/:uuid', {
 		uuid : '@uuid'
-	})
+	});
 } ])
 
 .factory('MashingService', [ '$resource', 'sharedProperties', function($resource, sharedProperties) {
@@ -24,5 +29,5 @@ angular
 			method : 'GET',
 			url : sharedProperties.getHost() + 'mashing/graph'
 		}
-	})
+	});
 } ]);

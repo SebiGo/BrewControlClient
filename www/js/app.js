@@ -8,8 +8,8 @@ angular.module('BrewControl', [
   'BrewControl.version',
   'mobile-angular-ui',
   'mobile-angular-ui.gestures'  
-]).
+])
 
-config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.otherwise({redirectTo: '/config'});
-}])
+}]);
