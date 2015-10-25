@@ -9,7 +9,7 @@ This is a single page web application based on AngularJS. In this repository, yo
 
 ## 0. The simple solution
 You don't need to install the client, you can just start it here (if you have web access):
-[http://sebastiangoodrick.github.io/BrewControlClient/www/][brewcontrol]
+[http://sebigo.github.io/BrewControlClient/www/][brewcontrol]
 
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 
@@ -17,7 +17,7 @@ This works for any device that has a browser. Make sure you supply a correct ser
 This project is based on the [AngularJS seed template][angular-seed]. You need to have npm and bower installed. 
 Clone and install the project:
 ```
-git clone git@github.com:SebastianGoodrick/BrewControlClient.git
+git clone git@github.com:SebiGo/BrewControlClient.git
 cd BrewControlClient
 npm install
 ```
@@ -43,10 +43,10 @@ Note: You have to set your phone to developer mode.
 # Contact, Support, Bugs, Feature requests
 Please use [GitHub Issues][issues] for bugs and feature requests.
 
-[issues]: https://github.com/SebastianGoodrick/BrewControlClient/issues
+[issues]: https://github.com/SebiGo/BrewControlClient/issues
 [angular-seed]: https://github.com/angular/angular-seed
-[brewcontrol]: http://sebastiangoodrick.github.io/BrewControlClient/www/
-[BrewControlServer]: https://github.com/SebastianGoodrick/BrewControlServer
+[brewcontrol]: http://sebigo.github.io/BrewControlClient/www/
+[BrewControlServer]: https://github.com/SebiGo/BrewControlServer
 
 # Continuous integration and code coverage 
-CodeClimate: [![Code Climate](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/badges/gpa.svg)](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient) [![Test Coverage](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/badges/coverage.svg)](https://codeclimate.com/github/SebastianGoodrick/BrewControlClient/coverage)
+CodeClimate: [![Code Climate](https://codeclimate.com/github/SebiGo/BrewControlClient/badges/gpa.svg)](https://codeclimate.com/github/SebiGo/BrewControlClient) [![Test Coverage](https://codeclimate.com/github/SebiGo/BrewControlClient/badges/coverage.svg)](https://codeclimate.com/github/SebiGo/BrewControlClient/coverage)
