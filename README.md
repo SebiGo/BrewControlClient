@@ -13,7 +13,19 @@ You don't need to install the client, you can just start it here (if you have we
 
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 
-## 1. Compile the project
+## 2. Run locally on a Raspberry Pi
+You can download the client to the same Raspberry Pi that your [BrewControlServer][BrewControlServer] runs on. 
+```
+sudo apt-get update
+sudo apt-get install lighttpd # install web server
+
+cd /var/www
+sudo wget http://sebigo.github.io/BrewControlClient/BrewControlClient.tar.gz
+sudo tar -xzf BrewControlClient.tar.gz 
+```
+Now fire up a browser on your Raspberry Pi and go to [http://localhost/BrewControlClient/www/index.html][localurl]. If you access from a remote browser, use the IP or hostname of your Raspberry Pi.
+
+## 2. Compile the project
 This project is based on the [AngularJS seed template][angular-seed]. You need to have npm and bower installed. 
 Clone and install the project:
 ```
@@ -47,6 +59,7 @@ Please use [GitHub Issues][issues] for bugs and feature requests.
 [angular-seed]: https://github.com/angular/angular-seed
 [brewcontrol]: http://sebigo.github.io/BrewControlClient/www/
 [BrewControlServer]: https://github.com/SebiGo/BrewControlServer
+[localurl]: http://localhost/BrewControlClient/www/index.html
 
 # Continuous integration and code coverage 
 CodeClimate: [![Code Climate](https://codeclimate.com/github/SebiGo/BrewControlClient/badges/gpa.svg)](https://codeclimate.com/github/SebiGo/BrewControlClient) [![Test Coverage](https://codeclimate.com/github/SebiGo/BrewControlClient/badges/coverage.svg)](https://codeclimate.com/github/SebiGo/BrewControlClient/coverage)
