@@ -13,7 +13,7 @@ You don't need to install the client, you can just start it here (if you have we
 
 This works for any device that has a browser. Make sure you supply a correct server connection string.
 
-## 2. Run locally on a Raspberry Pi
+## 1. Run locally on a Raspberry Pi
 You can download the client to the same Raspberry Pi that your [BrewControlServer][BrewControlServer] runs on. 
 ```
 sudo apt-get update
